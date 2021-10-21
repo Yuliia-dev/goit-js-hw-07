@@ -6,7 +6,6 @@ import { galleryItems } from './gallery-items.js';
 const galleryEl = document.querySelector('.gallery');
 galleryEl.addEventListener('click', onClickJustImage);
 galleryEl.addEventListener('click', openModal);
-// document.addEventListener('keydown', closeModal);
 
 const markup = createGalleryMarkup(galleryItems);
 galleryEl.insertAdjacentHTML('beforeend', markup);
@@ -44,10 +43,3 @@ function openModal(event) {
     `);
   instance.show();
 }
-
-// function closeModal(event) {
-//   console.log(event.key);
-//   if (event.key === 'Escape') {
-//     console.dir(document.activeElement);
-//   }
-// }

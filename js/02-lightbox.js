@@ -1,11 +1,10 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
-console.log(galleryItems);
+// console.log(galleryItems);
 
 const galleryEl = document.querySelector('.gallery');
 galleryEl.addEventListener('click', onClickJustImage);
-galleryEl.addEventListener('click', openModal);
 
 const markup = createGalleryMarkup(galleryItems);
 galleryEl.insertAdjacentHTML('beforeend', markup);
@@ -29,8 +28,7 @@ function onClickJustImage(event) {
   }
 }
 
-function openModal() {
-  let lightbox = new SimpleLightbox('.gallery a');
-
-  lightbox.on('show.simplelightbox');
-}
+const lightbox = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionDelay: 250,
+});
