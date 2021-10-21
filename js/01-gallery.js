@@ -42,4 +42,7 @@ function openModal(event) {
     <img src="${imgOriginal}" width="800" height="600">
     `);
   instance.show();
+  document.body.addEventListener('keydown', event => {
+    if (event.key === 'Escape') instance.close();
+  });
 }
