@@ -4,7 +4,7 @@ import { galleryItems } from './gallery-items.js';
 // console.log(galleryItems);
 
 const galleryEl = document.querySelector('.gallery');
-galleryEl.addEventListener('click', onClickImage);
+galleryEl.addEventListener('click', onClickJustImage);
 galleryEl.addEventListener('click', openModal);
 // document.addEventListener('keydown', closeModal);
 
@@ -29,7 +29,7 @@ function createGalleryMarkup(images) {
     .join('');
 }
 
-function onClickImage(event) {
+function onClickJustImage(event) {
   event.preventDefault();
   const isImage = event.target.classList.contains('gallery__image');
   if (!isImage) {
@@ -46,12 +46,8 @@ function openModal(event) {
 }
 
 // function closeModal(event) {
-//   console.log(event);
+//   console.log(event.key);
 //   if (event.key === 'Escape') {
-//     const imgOriginal = event.target.dataset.source;
-//     const instance = basicLightbox.close(`
-//     <img src="${imgOriginal}" width="800" height="600">
-//     `);
+//     console.dir(document.activeElement);
 //   }
-//   instance.close();
 // }
