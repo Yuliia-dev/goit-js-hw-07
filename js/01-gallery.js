@@ -5,9 +5,9 @@ import { galleryItems } from './gallery-items.js';
 
 const galleryEl = document.querySelector('.gallery');
 galleryEl.addEventListener('click', openModal);
-// galleryEl.addEventListener('click', onClickJustImage);
 const markup = createGalleryMarkup(galleryItems);
 galleryEl.insertAdjacentHTML('beforeend', markup);
+// galleryEl.addEventListener('click', onClickJustImage);
 
 function createGalleryMarkup(images) {
   return images
@@ -33,7 +33,6 @@ function createGalleryMarkup(images) {
 //   if (!isImage) {
 //     return;
 //   }
-
 //   console.log(isImage);
 // }
 
@@ -44,7 +43,6 @@ function openModal(event) {
     return;
   }
 
-  // console.log(event.target.dataset.source);
   const imgOriginal = event.target.dataset.source;
   const instance = basicLightbox.create(`
     <img src="${imgOriginal}" width="800" height="600">
@@ -55,7 +53,7 @@ function openModal(event) {
     event => {
       if (event.key === 'Escape') {
         instance.close();
-        console.log(event.key);
+        return;
       }
     },
     { once: true },
